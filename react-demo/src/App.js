@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component,Fragment } from 'react'
+import RouterMap from  './router/router'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      </div>
+      <Fragment>
+          <RouterMap />
+      </Fragment>
     );
   }
 }
