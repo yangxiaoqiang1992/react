@@ -6,7 +6,7 @@ import Login from '../pages/login'
 export default ()=>(
     <BrowserRouter >
        <Switch>
-           <Route path="/" component={Home}/>
+           <Route exact path="/" component={Home}></Route>
            <Route path="/login" component={Login} ></Route>
        </Switch>
     </BrowserRouter>
