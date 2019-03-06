@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './static/css/common/reset.css';
 import './static/css/common/common.css';
+import 'antd/dist/antd.css'
 import {createStore} from "redux"
 import { Provider } from 'react-redux'
 import reducer from  './reducer'
 import App from './App';
+
 
 let store = createStore(reducer)
 

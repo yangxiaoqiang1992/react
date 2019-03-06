@@ -7,7 +7,7 @@
 }
 .header{
     padding: 22px 0px;
-    height: 44px;
+    height: 88px;
     width: 1190px;
     margin: auto;
 }
@@ -18,14 +18,17 @@
 }
 .content{
     width:100%;
-    background:rgb(225, 55, 1);
+    background:#ddd;
+    flex:1;
+    position:relative;
 }
 .inner{
    position: relative;
+   height:100%;
    width: 1190px;
    margin: auto;
 }
-.inner a{
+.inner a.ad{
     display:block;
 }
 .loginForm{
@@ -35,10 +38,43 @@
     background:#fff;
     z-index:1;
     top:91px;
+    bottom:91px;
+    margin:auto;
     right:60px;
     padding: 25px 26px 20px;
     box-sizing: border-box;
 }
+.input{
+   margin:10px 0;
+}
+.input input{
+    width:100%;
+    height:40px;   
+    display:block;
+    outline: none;
+    border:1px solid #ddd;
+    padding:0 10px;
+    border-radius:3px;
+    color:#333;
+}
+.submit{
+    width:100%;
+    height:38px !important;
+    font-size:15px;
+    margin-top:10px;
+}
+.forgetPsd{
+    text-align:right;
+    padding:10px 0;
+}
+.forgetPsd a{
+    padding-left:12px;
+}
 .footer{
-   flex:1;
+   height:100px;
+   text-align: center;
+   font-size:18px;
+   display:flex;
+   justify-content: center;
+   align-items: center;
 }
