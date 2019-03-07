@@ -10,7 +10,7 @@ export default class login extends Component {
      }
   }
   render() {
-    const name ="yangxiaoqiang"
+    const name ="@coryright/yangxiaoqiang"
     const count = this.state.num
     const colors = ['#902223','#345663','#744667']
     const style = {
