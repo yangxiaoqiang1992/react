@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types' //类型检查
 import loginCss from '../../../static/css/login/login.css'
 export default class loginInput extends Component {
   constructor(props){
@@ -11,11 +12,13 @@ export default class loginInput extends Component {
     this.setState({
         value:e.target.value
     })
+    this.props.change(e.target.name,e.target.value)
   }
   clearHander(e){
     this.setState({
        value:''
     })
+    this.props.change(this.props.name,'')
   }
   render() {
     const {name,type,...other} = {...this.props}
@@ -29,4 +32,9 @@ export default class loginInput extends Component {
       </div>
     )
   }
+}
+loginInput.propTypes={
+  name:PropTypes.string.isRequired,
+  type:PropTypes.string.isRequired,
+  change:PropTypes.func
 }
