@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import { Button } from 'antd'
 import LoginInput from '../../../components/login/loginForm/loginInput'
 import loginCss from '../../../static/css/login/login.css'
+import api from '../../../api/api'
+import http from '../../../api/index.js'
 
 export default class loginForm extends Component {
   constructor(props){
@@ -20,7 +22,16 @@ export default class loginForm extends Component {
      console.log(name+"/"+this[name])
   }
   loginInHandler(){
+    var _this = this
     console.log({user:this.user,password:this.password})
+    http.post(api.login,'post',{
+      user:_this.user,
+      password:_this.password
+    },(res)=>{
+      console.log(res.data)    
+    },(error)=>{
+      console.log(error) 
+    })
   }
   render() {
     return (
