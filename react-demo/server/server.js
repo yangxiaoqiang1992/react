@@ -7,8 +7,12 @@ app.get('/',function(req,res){
     // console.log(res)
     res.send('hello')
 })
-app.post('login',function(req,res){
+app.get('/login',function(req,res){
     debugger
+    res.json({
+        status:'200',
+        data:'ok'
+    })
     res.send("success")
 })
 app.listen(8090,(error)=>{

@@ -24,7 +24,7 @@ export default class loginForm extends Component {
   loginInHandler(){
     var _this = this
     console.log({user:this.user,password:this.password})
-    http.post(api.login,'post',{
+    http.get(api.login,'get',{
       user:_this.user,
       password:_this.password
     },(res)=>{
