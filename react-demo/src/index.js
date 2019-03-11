@@ -10,7 +10,6 @@ import App from './App';
 
 
 let store = createStore(reducer)
-
 ReactDOM.render(
 <Provider store={store}>    
   <App />

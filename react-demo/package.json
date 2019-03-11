@@ -74,7 +74,6 @@
     "react-start": "node scripts/start.js",
     "server": "node server/server.js"
   },
-  "proxy": "http://localhost:8090/api/v1.0/",
   "eslintConfig": {
     "extends": "react-app"
   },

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import { Button } from 'antd'
+import { Button, notification } from 'antd'
 import LoginInput from '../../../components/login/loginForm/loginInput'
 import loginCss from '../../../static/css/login/login.css'
 import api from '../../../api/api'
@@ -13,22 +13,29 @@ export default class loginForm extends Component {
        this.password=''
        this.loginInHandler=this.loginInHandler.bind(this)
        this.inputChangeHander=this.inputChangeHander.bind(this)
+       console.log(this.props)
   }  
   componentDidMount(){
     
   }
   inputChangeHander(name,value){
      this[name] = value
-     console.log(name+"/"+this[name])
+    //  console.log(name+"/"+this[name])
   }
   loginInHandler(){
     var _this = this
-    console.log({user:this.user,password:this.password})
-    http.get(api.login,'get',{
+    http.post(api.login,'post',{
       user:_this.user,
       password:_this.password
     },(res)=>{
-      console.log(res.data)    
+      if(res.data && res.data.status ==='200'){
+        notification.open({
+           type:'success',
+           message:"登录成功"
+        })
+        this.props.dispatchLoginIn()
+      }
+      
     },(error)=>{
       console.log(error) 
     })

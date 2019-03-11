@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import LoginHeader from '../../components/login/header/header'
-import Loginform from '../../components/login/loginForm/loginForm'
+// import Loginform from '../../components/login/loginForm/loginForm'
+import Loginform from '../../container/login/loginForm'
 import loginCss from '../../static/css/login/login.css'
 export default class login extends Component {
   constructor(props){
      super(props)
+     this.timer = null 
      this.state={
        num:0
      }
@@ -35,15 +37,18 @@ export default class login extends Component {
   componentWillMount(){
      
   }
+  componentWillUnmount(){
+    // 组件卸载时需要移除定时器或其他task
+    clearInterval(this.timer)
+  }
   componentDidMount(){
     var _this = this
-    setInterval(function(){
+    this.timer = setInterval(function(){
       if(_this.state.num !== 2){
          _this.setState({num:_this.state.num+1})
       }else{
          _this.setState({num:0})
       }
-     
     },3000)
     console.log("组件生命周期componentDidMount")
   }

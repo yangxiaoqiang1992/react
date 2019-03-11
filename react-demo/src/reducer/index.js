@@ -1,7 +1,5 @@
 import { combineReducers } from "redux"
-function loginIn(state=0,action){
-    return state
-}
+import {loginIn} from './login/login'
 
 const reducer = combineReducers({
     loginIn
