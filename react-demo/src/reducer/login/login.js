@@ -8,10 +8,9 @@ export function loginIn(state,action){
    } 
    switch(action.type){
       case LOGIN_IN:
-          return Object.assign({},action.isLoginIn,{isLoginIn:true})
+          return Object.assign({},action.isLoginIn,{isLoginIn:true});
         //获取用户信息，需要用到异步action
-      case GET_USER_INFO:
-          
+      case GET_USER_INFO:break;
       default: return state
    }
 }

@@ -34,6 +34,7 @@ export default class loginForm extends Component {
            message:"登录成功"
         })
         this.props.dispatchLoginIn()
+        this.props.dispatchUserInfo()
       }
       
     },(error)=>{

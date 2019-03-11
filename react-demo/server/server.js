@@ -17,6 +17,15 @@ app.get('/',function(req,res){
     // console.log(res)
     res.send('hello')
 })
+app.get('/getUserInfo',function(req,res){
+    res.json({
+        status:'200',
+        data:{
+            name:'yxq',
+            avator:'/static/img/login/tm-logo.png'
+        }
+    })
+})
 app.post('/login',function(req,res){
     res.json({
         status:'200',

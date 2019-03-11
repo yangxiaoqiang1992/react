@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './static/css/common/reset.css';
 import './static/css/common/common.css';
 import 'antd/dist/antd.css'
-import {createStore} from "redux"
+import {createStore, applyMiddleware} from "redux"
 import { Provider } from 'react-redux'
 import reducer from  './reducer'
+import thunkMiddleware  from 'redux-thunk'
 import App from './App';
 
 
-let store = createStore(reducer)
+let store = createStore(reducer,applyMiddleware(thunkMiddleware))
 ReactDOM.render(
 <Provider store={store}>    
   <App />
